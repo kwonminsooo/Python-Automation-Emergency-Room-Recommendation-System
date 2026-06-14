@@ -1,0 +1,111 @@
+{
+  "1": {
+    "name": "호흡곤란",
+    "description": "숨쉬기 어려움, 산소포화도 저하, 호흡부전 의심",
+    "required_beds": ["응급실일반"],
+    "preferred_resources": ["중환자실", "인공호흡기"],
+    "api_fields": ["hvec", "hvicc", "hvventiayn"],
+    "weights": {
+      "응급실일반": 30,
+      "중환자실": 25,
+      "인공호흡기": 25,
+      "혼잡도": 20
+    }
+  },
+  "2": {
+    "name": "심혈관 문제",
+    "description": "가슴통증, 심근경색, 심정지 등 심혈관 응급상황 의심",
+    "required_beds": ["응급실일반"],
+    "preferred_resources": ["중환자실", "CT가능", "수술실"],
+    "api_fields": ["hvec", "hvicc", "hvctayn", "hvoc"],
+    "weights": {
+      "응급실일반": 30,
+      "중환자실": 25,
+      "CT가능": 15,
+      "수술실": 15,
+      "혼잡도": 15
+    }
+  },
+  "3": {
+    "name": "외상",
+    "description": "교통사고, 추락, 칼에 찔림, 골절 등 외상 환자",
+    "required_beds": ["응급실일반"],
+    "preferred_resources": ["수술실", "CT가능", "중환자실"],
+    "api_fields": ["hvec", "hvoc", "hvctayn", "hvicc"],
+    "weights": {
+      "응급실일반": 25,
+      "수술실": 25,
+      "CT가능": 20,
+      "중환자실": 15,
+      "혼잡도": 15
+    }
+  },
+  "4": {
+    "name": "신경계 증상",
+    "description": "의식저하, 마비, 경련, 뇌졸중 의심 등",
+    "required_beds": ["응급실일반"],
+    "preferred_resources": ["CT가능", "MRI가능", "중환자실"],
+    "api_fields": ["hvec", "hvctayn", "hvmriayn", "hvicc"],
+    "weights": {
+      "응급실일반": 25,
+      "CT가능": 25,
+      "MRI가능": 20,
+      "중환자실": 15,
+      "혼잡도": 15
+    }
+  },
+  "5": {
+    "name": "소아 응급",
+    "description": "소아 고열, 경련, 소아 호흡곤란 등",
+    "required_beds": ["응급실소아"],
+    "preferred_resources": ["응급실일반"],
+    "api_fields": ["hvgc", "hvec"],
+    "weights": {
+      "응급실소아": 45,
+      "응급실일반": 20,
+      "혼잡도": 25,
+      "기관구분": 10
+    }
+  },
+  "6": {
+    "name": "화상",
+    "description": "중증 화상, 열상, 전기화상 등",
+    "required_beds": ["응급실일반"],
+    "preferred_resources": ["중환자실", "음압격리", "일반격리"],
+    "api_fields": ["hvec", "hvicc"],
+    "weights": {
+      "응급실일반": 30,
+      "중환자실": 20,
+      "음압격리": 15,
+      "일반격리": 15,
+      "혼잡도": 20
+    }
+  },
+  "7": {
+    "name": "중독",
+    "description": "약물중독, 가스중독, 음독 등",
+    "required_beds": ["응급실일반"],
+    "preferred_resources": ["중환자실", "인공호흡기"],
+    "api_fields": ["hvec", "hvicc", "hvventiayn"],
+    "weights": {
+      "응급실일반": 30,
+      "중환자실": 25,
+      "인공호흡기": 25,
+      "혼잡도": 20
+    }
+  },
+  "8": {
+    "name": "감염 의심",
+    "description": "고열, 감염병 의심, 격리 필요 가능성",
+    "required_beds": ["응급실일반"],
+    "preferred_resources": ["음압격리", "일반격리", "코호트격리"],
+    "api_fields": ["hvec"],
+    "weights": {
+      "응급실일반": 25,
+      "음압격리": 30,
+      "일반격리": 20,
+      "코호트격리": 15,
+      "혼잡도": 10
+    }
+  }
+}
